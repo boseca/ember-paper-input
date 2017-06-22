@@ -1,0 +1,193 @@
+/* form styling ----------------------- */
+.float-label-group {
+  position: relative;
+  /*margin: 40px 0 20px;*/
+  margin: 15px 0 10px;
+}
+.float-label-group > input {
+  /*font-size: 18px;*/
+  font-weight: 400;
+  padding: 5px 0; /* 10px 10px 10px 0px;*/
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.12); /* #757575;*/
+  background-color: transparent;
+}
+.float-label-group > input[step="0.01"] {
+	text-align: right;
+}
+.float-label-group > input[step="0.01"] ~ label {
+	text-align: right;
+	right: 0;
+}
+/* LABEL ======================================= */
+.float-label-group > label {
+  /*color: #999;*/
+  color: rgba(0,0,0,0.54);	/* google */
+  font-size: 1.2em; /* 18px; 15px*/
+  /*font-weight: normal;*/
+  opacity: 0.6;
+  position: absolute;
+  pointer-events: none;
+  left: 0px; /* 5px; */
+  top: 5px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* focus state */
+.float-label-group > input:focus,
+.float-label-group > div.ember-power-select-trigger:focus {
+  outline: none;
+}
+.float-label-group > input:focus ~ label {
+	color: #4285f4; /* #b761c5; #5264AE; #4285f4; */
+	opacity:1!important;
+}
+
+/* active state */
+.float-label-group > label.placeholder-hidden,
+.float-label-group > input:focus ~ label,
+.float-label-group > input:valid ~ label:not(.placeholder-show) {
+  /*top: -20px;*/
+  top: -12px;
+  font-size: 0.9231em; /*12px*/ 
+  opacity: 0.6;
+}
+.float-label-group > .ember-power-select-trigger ~ label.placeholder-hidden { top: -18px!important; }
+
+/* inactive state */
+.float-label-group > .ember-power-select-trigger ~ label:not(.placeholder-hidden) {
+	opacity: 0!important;
+}
+
+/* error state */
+.float-label-group > input ~ label.error,
+.float-label-group > input ~ label.error ~ p.error {
+	color: #c53929; 
+	/*opacity:1!important;*/
+}
+.float-label-group > p.error {
+	color: #c53929;
+	font-size: 0.9231em;
+	line-height: 0;
+	padding-top: 5px;
+	margin: 0;
+}
+.float-label-group > input ~ label.error ~ .float-label-bar:before,
+.float-label-group > input ~ label.error ~ .float-label-bar:after {
+  background: #c53929; 
+}
+
+
+/* BOTTOM BARS ================================= */
+.float-label-group .float-label-bar {
+  position: relative;
+  display:block;
+  width:100%;
+  height: 1px;
+}
+.float-label-group .float-label-bar:before,
+.float-label-group .float-label-bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #4285f4; /* #5264AE; #4285f4;*/
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.float-label-group .float-label-bar:before {
+  left: 50%;
+}
+.float-label-group .float-label-bar:after {
+  right: 50%;
+}
+
+/* active state */
+.float-label-group > input:focus ~ .float-label-bar:before,
+.float-label-group > input:focus ~ .float-label-bar:after,
+.float-label-group > div.ember-power-select-trigger:focus ~ .float-label-bar:before,
+.float-label-group > div.ember-power-select-trigger:focus ~ .float-label-bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from { background: #4285f4; }
+  to   { width: 0; background: transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background: #4285f4; }
+  to   { width: 0; background: transparent; }
+}
+@keyframes inputHighlighter {
+  from { background: #4285f4; }
+  to   { width: 0; background: transparent; }
+}
+
+/* hide the placehoder -------------- */
+.float-label-group > input:-ms-input-placeholder { opacity: 0; transition: inherit; }
+.float-label-group > input::-web-input-placeholder { opacity: 0; transition: inherit; }
+.float-label-group > input::-webkit-input-placeholder { opacity: 0; transition: inherit; }
+
+/**
+* Show the placeholder when the input is focused.
+*/
+.float-label-group > input:focus:-ms-input-placeholder { opacity: 0.6; },
+.float-label-group > input:focus::-web-input-placeholder { opacity: 0.6; }
+.float-label-group > input:focus::-webkit-input-placeholder { opacity: 0.6; }
+/**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+.float-label-group > input:not(:placeholder-shown) + label,
+.float-label-group > input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+/* power select */
+.float-label-group > .ember-power-select-trigger {
+	padding-top: 4px;
+	padding-bottom: 2px;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0,0.12); /* #757575;*/
+	border-radius: 0px;
+	background: transparent;
+}
+.float-label-group > .ember-power-select-trigger > .ember-power-select-selected-item, 
+.float-label-group > .ember-power-select-trigger > .ember-power-select-placeholder {
+	margin-left: 0px!important;
+}
+
+/* currency prefix */
+.float-label-group > .prefix-currency {
+	display: block;
+	position: absolute;
+	font-weight: 400;	
+	padding: 5px 0;
+}
