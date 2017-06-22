@@ -1,4 +1,4 @@
-# ember-bootstrap-floating-labels
+# ember-paper-input
 
 
 An animated floating label addon for Ember.
