@@ -1,33 +1,26 @@
-# ember-paper-input
-
-This README outlines the details of collaborating on this Ember addon.
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd ember-paper-input`
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+# ember-bootstrap-floating-labels
 
 
-################################################
-To use the addon add this line in your package.json
+An animated floating label addon for Ember.
 
-"ember-paper-input": "git+https://github.com/boseca/ember-paper-input.git" [#version/branch]
+![Floating Label](http://imgur.com/a/CKnYf)
+
+## Install
+
+```bash
+ember install ember-paper-input
+```
+
+or add the addon in your package.json file
+```bash
+"ember-paper-input": "git+https://github.com/boseca/ember-paper-input.git"
+```
+
+## Usage
+
+```hbs
+{{#ember-paper-input}}
+	{{input id="txt-firstname" type="text" required=true placeholder='John'}}
+	<label for="txt-firstname">First name</label>
+{{/ember-paper-input}}
+```
