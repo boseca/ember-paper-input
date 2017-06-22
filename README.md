@@ -3,7 +3,7 @@
 
 An animated floating label addon for Ember.
 
-![Floating Label](http://imgur.com/a/CKnYf)
+![Floating Label](http://imgur.com/XBgKvMR.gif)
 
 ## Install
 
