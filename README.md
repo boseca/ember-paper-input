@@ -1,2 +1,2 @@
 # ember-paper-input
-Floating labels for ember with hint text
+Floating labels for ember with a hint text
