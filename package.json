@@ -1,6 +1,6 @@
 {
   "name": "ember-paper-input",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An animated floating label addon for Ember.",
   "keywords": [
     "ember-addon",
