@@ -2,6 +2,7 @@
 
 
 An animated floating label addon for Ember.
+Supports label text to be different from the placeholder (watermark) and also supports use of keyboard (e.g. tab,enter,...).
 
 ![Floating Label](http://imgur.com/XBgKvMR.gif)
 
